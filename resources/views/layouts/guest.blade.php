@@ -15,7 +15,11 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="font-sans text-gray-900 antialiased bg-gradient-to-br from-pink-50 via-purple-50 to-blue-50 min-h-screen selection:bg-pink-300 selection:text-pink-900">
+<body class="font-sans text-gray-900 antialiased bg-gradient-to-br from-pink-50 via-purple-50 to-blue-50 min-h-screen selection:bg-pink-300 selection:text-pink-900 overflow-x-hidden">
+
+    <!-- Custom Cursor -->
+    <div id="custom-cursor" class="fixed top-0 left-0 w-6 h-6 bg-pink-500 rounded-full mix-blend-multiply pointer-events-none z-[9999] opacity-70 transform -translate-x-1/2 -translate-y-1/2 will-change-transform hidden md:block"></div>
+    <div id="custom-cursor-follower" class="fixed top-0 left-0 w-12 h-12 border-2 border-indigo-500 rounded-full pointer-events-none z-[9998] opacity-50 transform -translate-x-1/2 -translate-y-1/2 will-change-transform hidden md:block"></div>
 
     <div class="fixed top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
         <div class="absolute top-10 left-10 w-40 h-40 bg-pink-200 rounded-full mix-blend-multiply filter blur-2xl opacity-60"></div>

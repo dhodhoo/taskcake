@@ -16,16 +16,16 @@
                 @endphp
 
                 <div class="hidden sm:flex sm:items-center sm:space-x-4">
-                    <a href="{{ route('dashboard') }}" class="px-4 py-2 rounded-2xl font-bold transition-all {{ request()->routeIs('dashboard') ? $activeClass : $inactiveClass }}">
+                    <a href="{{ route('dashboard') }}" class="gsap-magnetic px-4 py-2 rounded-2xl font-bold transition-all {{ request()->routeIs('dashboard') ? $activeClass : $inactiveClass }}">
                         🏠 Dashboard
                     </a>
-                    <a href="{{ route('schedules.index') }}" class="px-4 py-2 rounded-2xl font-bold transition-all {{ request()->routeIs('schedules.*') ? $activeClass : $inactiveClass }}">
+                    <a href="{{ route('schedules.index') }}" class="gsap-magnetic px-4 py-2 rounded-2xl font-bold transition-all {{ request()->routeIs('schedules.*') ? $activeClass : $inactiveClass }}">
                         🚀 Jadwal
                     </a>
-                    <a href="{{ route('notes.index') }}" class="px-4 py-2 rounded-2xl font-bold transition-all {{ request()->routeIs('notes.*') ? $activeClass : $inactiveClass }}">
+                    <a href="{{ route('notes.index') }}" class="gsap-magnetic px-4 py-2 rounded-2xl font-bold transition-all {{ request()->routeIs('notes.*') ? $activeClass : $inactiveClass }}">
                         📖 Catatan
                     </a>
-                    <a href="{{ route('posts.index') }}" class="px-4 py-2 rounded-2xl font-bold transition-all {{ request()->routeIs('posts.*') ? $activeClass : $inactiveClass }}">
+                    <a href="{{ route('posts.index') }}" class="gsap-magnetic px-4 py-2 rounded-2xl font-bold transition-all {{ request()->routeIs('posts.*') ? $activeClass : $inactiveClass }}">
                         🌍 Global Notes
                     </a>
                 </div>

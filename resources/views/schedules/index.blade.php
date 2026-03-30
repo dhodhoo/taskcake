@@ -6,7 +6,7 @@
                 <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-indigo-500">{{ __('Misi & Jadwalku') }}</span>
                 <span>🚀</span>
             </h2>
-            <a href="{{ route('schedules.create') }}" class="px-5 py-3 bg-indigo-500 text-white rounded-2xl hover:bg-indigo-400 font-bold shadow-[0_4px_0_0_#4338ca] active:shadow-none active:translate-y-1 transition-all">
+            <a href="{{ route('schedules.create') }}" class="gsap-squishy-btn px-5 py-3 bg-indigo-500 text-white rounded-2xl hover:bg-indigo-400 font-bold shadow-[0_4px_0_0_#4338ca] active:shadow-none active:translate-y-1 transition-all">
                 + Jadwal Baru ⏰
             </a>
         </div>
@@ -24,7 +24,7 @@
             <div class="mb-8">
                 <form action="{{ route('schedules.index') }}" method="GET" class="flex flex-col sm:flex-row gap-4">
                     <input type="text" name="search" value="{{ $search ?? '' }}" placeholder="Cari misi atau kegiatan... 🔎" class="w-full rounded-2xl border-4 border-indigo-200 focus:border-indigo-500 focus:ring-0 text-lg font-bold p-4 shadow-[4px_4px_0_0_#c7d2fe] transition-colors">
-                    <button type="submit" class="px-8 py-4 bg-yellow-400 text-yellow-900 rounded-2xl font-black text-lg shadow-[0_4px_0_0_#ca8a04] hover:bg-yellow-300 active:shadow-none active:translate-y-1 transition-all">
+                    <button type="submit" class="gsap-squishy-btn px-8 py-4 bg-yellow-400 text-yellow-900 rounded-2xl font-black text-lg shadow-[0_4px_0_0_#ca8a04] hover:bg-yellow-300 active:shadow-none active:translate-y-1 transition-all">
                         Cari! 🚀
                     </button>
                     @if($search)
@@ -46,7 +46,7 @@
             @else
             <div class="space-y-6 mb-8">
                 @foreach($schedules as $schedule)
-                <div class="bg-white rounded-3xl border-4 border-indigo-300 shadow-[8px_8px_0_0_#a5b4fc] p-6 flex flex-col md:flex-row items-center justify-between transform transition hover:scale-[1.01]">
+                <div class="gsap-stagger-card bg-white rounded-3xl border-4 border-indigo-300 shadow-[8px_8px_0_0_#a5b4fc] p-6 flex flex-col md:flex-row items-center justify-between transform transition hover:scale-[1.01]">
 
                     <div class="bg-yellow-300 border-4 border-yellow-400 rounded-2xl p-4 text-center min-w-[120px] shadow-inner mb-4 md:mb-0">
                         <p class="text-yellow-900 font-black text-sm uppercase">{{ \Carbon\Carbon::parse($schedule->schedule_date)->format('M') }}</p>

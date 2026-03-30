@@ -24,7 +24,7 @@
                     @csrf
                     <textarea name="content" rows="3" placeholder="Apa yang sedang kamu pikirkan? Bagikan ke semua orang! 🌟" class="w-full rounded-2xl border-4 border-blue-200 focus:border-blue-500 focus:ring-0 text-lg font-bold p-4 shadow-[4px_4px_0_0_#dbeafe] transition-colors mb-4 resize-none" required></textarea>
                     <div class="flex justify-end">
-                        <button type="submit" class="px-8 py-4 bg-blue-500 text-white rounded-2xl font-black text-lg shadow-[0_4px_0_0_#1d4ed8] hover:bg-blue-400 active:shadow-none active:translate-y-1 transition-all">
+                        <button type="submit" class="gsap-squishy-btn px-8 py-4 bg-blue-500 text-white rounded-2xl font-black text-lg shadow-[0_4px_0_0_#1d4ed8] hover:bg-blue-400 active:shadow-none active:translate-y-1 transition-all">
                             Posting! 🚀
                         </button>
                     </div>
@@ -34,7 +34,7 @@
             <!-- List of Posts -->
             <div class="space-y-8">
                 @foreach($posts as $post)
-                <div class="bg-white rounded-3xl border-4 border-purple-300 shadow-[8px_8px_0_0_#e9d5ff] flex flex-col transform transition hover:-translate-y-1 hover:shadow-[12px_12px_0_0_#e9d5ff]" x-data="{ showComments: false }">
+                <div class="gsap-stagger-card bg-white rounded-3xl border-4 border-purple-300 shadow-[8px_8px_0_0_#e9d5ff] flex flex-col transform transition hover:-translate-y-1 hover:shadow-[12px_12px_0_0_#e9d5ff]" x-data="{ showComments: false }">
                     <!-- Post Header & Content -->
                     <div class="p-6 pb-4">
                         <div class="flex justify-between items-center mb-4 border-b-4 border-dashed border-purple-100 pb-4">

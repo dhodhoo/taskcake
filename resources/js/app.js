@@ -1,4 +1,5 @@
 import './bootstrap';
+import './gsap-animations';
 
 import Alpine from 'alpinejs';
 
