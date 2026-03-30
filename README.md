@@ -63,4 +63,4 @@ Akses aplikasi di `http://localhost:8000` ✨
 
 ---
 
-&copy; {{ date('Y') }} TaskCake. Built with 💖 by [@dhodho](http://github.com/dhodhoo)
+&copy; TaskCake. Built by [@dhodho](http://github.com/dhodhoo)
