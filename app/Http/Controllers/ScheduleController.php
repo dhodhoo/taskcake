@@ -31,6 +31,13 @@ class ScheduleController extends Controller
         return view('schedules.index', compact('schedules', 'search'));
     }
 
+    public function create()
+    {
+        Gate::authorize('create', Schedule::class);
+
+        return view('schedules.create');
+    }
+
     public function store(Request $request)
     {
         Gate::authorize('create', Schedule::class);

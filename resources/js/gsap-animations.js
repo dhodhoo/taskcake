@@ -67,15 +67,15 @@ document.addEventListener("DOMContentLoaded", () => {
         gsap.from(card, {
             scrollTrigger: {
                 trigger: card,
-                start: "top 95%", // animate when top of card hits 95% down viewport
-                toggleActions: "play none none reverse", // play on enter, reverse on leave back
+                start: "top 90%", // animate earlier
+                toggleActions: "play none none reverse", 
             },
-            y: 100,
-            rotationX: 45, // 3D flip effect
-            scale: 0.8,
+            y: 40,
+            rotationX: 15, // lighter flip effect
+            scale: 0.95,
             opacity: 0,
-            duration: 1.2,
-            ease: "expo.out"
+            duration: 0.5, // much faster
+            ease: "power2.out"
         });
     });
 
