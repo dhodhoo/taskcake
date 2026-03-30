@@ -6,6 +6,7 @@ use App\Models\Note;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use Illuminate\Support\Facades\Gate;
 
 class NoteController extends Controller
 {
@@ -24,20 +25,22 @@ class NoteController extends Controller
                 });
             })
             ->latest()
-            ->paginate(6) // Batasi 6 catatan per halaman
-            ->withQueryString(); // Ingat kata kunci pencarian saat pindah halaman
+            ->paginate(6)
+            ->withQueryString();
 
         return view('notes.index', compact('notes', 'search'));
     }
 
     public function create()
     {
+        Gate::authorize('create', Note::class);
         return view('notes.create');
     }
 
     public function store(Request $request)
     {
-        // Validasi input
+        Gate::authorize('create', Note::class);
+
         $validated = $request->validate([
             'title' => 'required|string|max:255',
             'content' => 'required|string',
@@ -52,19 +55,14 @@ class NoteController extends Controller
 
     public function edit(Note $note)
     {
-        // Keamanan ekstra: Pastikan catatan ini milik user yang sedang login
-        if ($note->user_id !== Auth::id()) {
-            abort(403, 'Unauthorized action.');
-        }
+        Gate::authorize('update', $note);
 
         return view('notes.edit', compact('note'));
     }
 
     public function update(Request $request, Note $note)
     {
-        if ($note->user_id !== Auth::id()) {
-            abort(403, 'Unauthorized action.');
-        }
+        Gate::authorize('update', $note);
 
         $validated = $request->validate([
             'title' => 'required|string|max:255',
@@ -78,9 +76,7 @@ class NoteController extends Controller
 
     public function destroy(Note $note)
     {
-        if ($note->user_id !== Auth::id()) {
-            abort(403, 'Unauthorized action.');
-        }
+        Gate::authorize('delete', $note);
 
         $note->delete();
 

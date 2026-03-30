@@ -6,6 +6,7 @@ use App\Models\Schedule;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use Illuminate\Support\Facades\Gate;
 
 class ScheduleController extends Controller
 {
@@ -24,7 +25,7 @@ class ScheduleController extends Controller
             })
             ->orderBy('schedule_date')
             ->orderBy('schedule_time')
-            ->paginate(5) // Batasi 5 jadwal per halaman
+            ->paginate(5)
             ->withQueryString();
 
         return view('schedules.index', compact('schedules', 'search'));
@@ -32,6 +33,8 @@ class ScheduleController extends Controller
 
     public function store(Request $request)
     {
+        Gate::authorize('create', Schedule::class);
+
         $validated = $request->validate([
             'title' => 'required|string|max:255',
             'schedule_date' => 'required|date',
@@ -48,19 +51,14 @@ class ScheduleController extends Controller
 
     public function edit(Schedule $schedule)
     {
-        // Keamanan: Cegah user edit jadwal orang lain
-        if ($schedule->user_id !== Auth::id()) {
-            abort(403, 'Unauthorized action.');
-        }
+        Gate::authorize('update', $schedule);
 
         return view('schedules.edit', compact('schedule'));
     }
 
     public function update(Request $request, Schedule $schedule)
     {
-        if ($schedule->user_id !== Auth::id()) {
-            abort(403, 'Unauthorized action.');
-        }
+        Gate::authorize('update', $schedule);
 
         $validated = $request->validate([
             'title' => 'required|string|max:255',
@@ -76,9 +74,7 @@ class ScheduleController extends Controller
 
     public function destroy(Schedule $schedule)
     {
-        if ($schedule->user_id !== Auth::id()) {
-            abort(403, 'Unauthorized action.');
-        }
+        Gate::authorize('delete', $schedule);
 
         $schedule->delete();
 
