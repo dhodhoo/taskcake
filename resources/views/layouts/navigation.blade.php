@@ -25,6 +25,9 @@
                     <a href="{{ route('notes.index') }}" class="px-4 py-2 rounded-2xl font-bold transition-all {{ request()->routeIs('notes.*') ? $activeClass : $inactiveClass }}">
                         📖 Catatan
                     </a>
+                    <a href="{{ route('posts.index') }}" class="px-4 py-2 rounded-2xl font-bold transition-all {{ request()->routeIs('posts.*') ? $activeClass : $inactiveClass }}">
+                        🌍 Global Notes
+                    </a>
                 </div>
             </div>
 
@@ -81,6 +84,9 @@
             </a>
             <a href="{{ route('notes.index') }}" class="block px-4 py-3 rounded-2xl font-bold {{ request()->routeIs('notes.*') ? 'bg-purple-200 text-purple-800' : 'text-purple-600 hover:bg-purple-100' }}">
                 📖 Catatan
+            </a>
+            <a href="{{ route('posts.index') }}" class="block px-4 py-3 rounded-2xl font-bold {{ request()->routeIs('posts.*') ? 'bg-blue-200 text-blue-800' : 'text-blue-600 hover:bg-blue-100' }}">
+                🌍 Global Notes
             </a>
         </div>
 

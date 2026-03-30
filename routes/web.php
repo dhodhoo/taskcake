@@ -4,6 +4,9 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ScheduleController;
 use App\Http\Controllers\NoteController;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\CommentController;
+use App\Http\Controllers\LikeController;
 use Illuminate\Support\Facades\Route;
 
 // Halaman Utama (Welcome)
@@ -18,6 +21,12 @@ Route::middleware('auth')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::resource('schedules', ScheduleController::class);
     Route::resource('notes', NoteController::class);
+
+    // Timeline / Global Notes
+    Route::resource('posts', PostController::class)->only(['index', 'store', 'destroy']);
+    Route::post('posts/{post}/comments', [CommentController::class, 'store'])->name('comments.store');
+    Route::delete('comments/{comment}', [CommentController::class, 'destroy'])->name('comments.destroy');
+    Route::post('posts/{post}/likes', [LikeController::class, 'toggle'])->name('likes.toggle');
 
     // Rute Profil (Bawaan Laravel Breeze - INI YANG MEMPERBAIKI ERROR)
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

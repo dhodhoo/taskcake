@@ -6,6 +6,7 @@ TaskCake adalah aplikasi manajemen tugas dan catatan pribadi yang dirancang deng
 ---
 
 ## 🎨 Fitur Utama
+- **Global Notes 🌍**: Berbagi catatan secara publik dengan seluruh pengguna di halaman Timeline. Dilengkapi fitur interaktif *Like* dan *Comment* selaiknya media sosial mini.
 - **Notes Gallery 📝**: Simpan ide-ide cemerlangmu dalam galeri catatan yang cantik. Dilengkapi dengan fitur pencarian dan paginasi.
 - **Quick Schedules 🚀**: Atur misi harianmu agar tidak ada yang terlewat. Pencarian jadwal yang mudah dan urut berdasarkan waktu.
 - **Cake Theme 🍰**: Antarmuka penuh warna pastel (pink, indigo, yellow) dengan desain modern berbasis *border* tebal dan bayangan dinamis.
@@ -63,4 +64,4 @@ Akses aplikasi di `http://localhost:8000` ✨
 
 ---
 
-&copy; TaskCake. Built by [@dhodho](http://github.com/dhodhoo)
+&copy; 2026 TaskCake. Built by [@dhodho](http://github.com/dhodhoo)
